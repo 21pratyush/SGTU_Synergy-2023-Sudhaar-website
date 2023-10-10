@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Current Latitude and Longitude</title>
+</head>
+<body>
+    <h1>Current Location</h1>
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+    <button id="getLocationButton">Get Location</button>
+
+    <script>
+        // Function to handle the button click event
+        document.getElementById("getLocationButton").addEventListener("click", getLocation);
+
+        function getLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Accessing latitude and longitude from the Geolocation API
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    // Display the latitude and longitude on the page
+                    document.getElementById("latitude").textContent = latitude;
+                    document.getElementById("longitude").textContent = longitude;
+                }, function(error) {
+                    // Handle any errors that may occur
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("User denied the request for Geolocation.");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Location information is unavailable.");
+                            break;
+                        case error.TIMEOUT:
+                            alert("The request to get user location timed out.");
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            alert("An unknown error occurred.");
+                            break;
+                    }
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Get Current Location</title>
+</head>
+<body>
+    <h1>Current Location</h1>
+    <p>Location Name: <span id="locationName"></span></p>
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+    <button id="getLocationButton">Get Location</button>
+
+    <script>
+        // Function to handle the button click event
+        document.getElementById("getLocationButton").addEventListener("click", getLocation);
+
+        function getLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Accessing latitude and longitude from the Geolocation API
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    // Display the latitude and longitude on the page
+                    document.getElementById("latitude").textContent = latitude;
+                    document.getElementById("longitude").textContent = longitude;
+
+                    // Use reverse geocoding to get location name
+                    reverseGeocode(latitude, longitude);
+                }, function(error) {
+                    // Handle any errors that may occur
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("User denied the request for Geolocation.");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Location information is unavailable.");
+                            break;
+                        case error.TIMEOUT:
+                            alert("The request to get user location timed out.");
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            alert("An unknown error occurred.");
+                            break;
+                    }
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+
+        function reverseGeocode(latitude, longitude) {
+            // Make an API request to a geocoding service (e.g., Google Maps Geocoding API)
+            // Replace 'YOUR_API_KEY' with your actual API key if required
+            var apiKey = 'YOUR_API_KEY'; // Optional
+            var apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'OK' && data.results.length > 0) {
+                        var locationName = data.results[0].formatted_address;
+                        document.getElementById("locationName").textContent = locationName;
+                    } else {
+                        document.getElementById("locationName").textContent = "Location not found";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching geolocation data:", error);
+                    document.getElementById("locationName").textContent = "Location not found";
+                });
+        }
+    </script>
+</body>
+</html> -->

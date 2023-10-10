@@ -1,0 +1,25 @@
+section{
+    height: 3.5in;
+    width: 100%;
+    display:flex;
+    /* margin:25px; */
+    background-color: F5F5DC;
+}
+.png{
+    height: 3.5in;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+.description{
+    display:flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+img{
+    height:3.5in;
+    width:90%;
+}

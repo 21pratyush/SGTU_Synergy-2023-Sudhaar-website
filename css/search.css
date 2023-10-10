@@ -1,0 +1,164 @@
+/* Global styles */
+.box{
+    font-family: Arial, sans-serif;
+    background-color: F5F5DC;
+    margin: 0;
+    padding: 0;
+    /* border:3px solid black; */
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5DC;
+    align-items: center;
+    /* max-height: 100vh; */
+    /* height: 15in; */
+}
+
+/* Styles for the search container */
+.search-container {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Styles for the content container */
+.content-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+#content-title {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#content-text {
+    color: #666;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+    display: none;
+}
+h2, h3{
+    color:black;    
+}
+.professional-form {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* max-width: 400px; */
+    width: 5in;
+    margin: 20px auto;
+}
+
+.professional-form label {
+    display: block;
+    color:black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.professional-form input[type="text"],
+.professional-form input[type="email"],
+.professional-form input[type="tel"],
+.professional-form input[type="time"],
+.professional-form input[type="date"],
+.professional-form input[type="location"],
+.professional-form input[type="description"],
+.professional-form input[type="complaint"],
+.professional-form input[type="other"],
+.professional-form textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.professional-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.professional-form button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.professional-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Button Styles */
+.custom-button {
+    background-color: #3498db; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    padding: 5px 10px; /* Button padding */
+    font-size: 15px; /* Button text size */
+    cursor: pointer;
+    border-radius: 4px; /* Button border radius */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 4px;
+}
+
+.custom-button:nth-child(6){
+    background-color: #333;
+}
+
+/* Hover effect */
+.custom-button:hover {
+    background-color: #2980b9; /* Hover background color */
+    transform: translateY(-2px); /* Move button up slightly on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+}
+
+/* Active effect (when the button is clicked) */
+.custom-button:active {
+    transform: translateY(1px); /* Move button down slightly when clicked */
+    box-shadow: none; /* Remove the shadow when clicked */
+}
+
